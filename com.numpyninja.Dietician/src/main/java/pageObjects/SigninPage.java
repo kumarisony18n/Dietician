@@ -9,9 +9,11 @@
 /*     */ import org.openqa.selenium.support.PageFactory;
 /*     */ 
 /*     */ public class SigninPage {
-/*  13 */   RegisterPage regPage = new RegisterPage();
+	
+			WebDriver driver;
+/*  13 */   RegisterPage regPage = new RegisterPage(driver);
 /*     */   
-/*     */   WebDriver driver;
+/*     */   
 /*     */   
 /*     */   @FindBy(how = How.XPATH, xpath = "//*[@id='signin-icon']")
 /*     */   public static WebElement signInIcon;

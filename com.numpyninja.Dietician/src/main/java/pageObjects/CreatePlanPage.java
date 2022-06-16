@@ -12,6 +12,10 @@
 /*     */   
 /*     */   @FindBy(how = How.XPATH, xpath = "//h2[contains(text(), 'Confirm HealthConditions and Generate a new Diet Plan')]")
 /*     */   public static WebElement createPlanPageHeader;
+
+			@FindBy(id="searchbox")WebElement insertText;
+			@FindBy(xpath="/html/body/div[1]/div/div/h1") WebElement text;
+			@FindBy(xpath="//button[@class='btn']") WebElement browserbutton;
 /*     */   
 /*     */   @FindBy(how = How.ID, using = "uploadbutton")
 /*     */   public static WebElement uploadButton;
@@ -28,7 +32,7 @@
 /*     */   @FindBy(how = How.XPATH, using = "//button[@id='confrm']")
 /*     */   public static WebElement Confirm;
 /*     */   
-/*     */   public CreatePlanPage() {
+/*     */   public CreatePlanPage(WebDriver driver) {
 /*  36 */     PageFactory.initElements((SearchContext)this.driver, this);
 /*     */   }
 /*     */   
@@ -89,10 +93,27 @@
 /* 126 */     Confirm.getDomProperty("disable");
 /* 127 */     return false;
 /*     */   }
-/*     */ }
+/*     */
+			
+	//To check Browser button 
+	public boolean  browseBtn() {
+		browserbutton.isDisplayed();
+		return true;
+	}
+	
+	public boolean textFieldbar() {
+		insertText.isDisplayed();
+		return true;
+	}
+	
+	public void textenterd() {
+		insertText.sendKeys("PDF files only ");
+	}
+	
+	public String  vaidatetheText() {
+		
+		return text.getText();
+		
+	}
 
-
-/* Location:              D:\DieticianProject_Lakshmi\dietitianPages.jar!\dietitianPages\CreatePlanPage.class
- * Java compiler version: 5 (49.0)
- * JD-Core Version:       1.1.3
- */
+}
