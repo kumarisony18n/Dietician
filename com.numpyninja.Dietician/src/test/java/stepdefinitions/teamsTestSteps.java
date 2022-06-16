@@ -3,7 +3,8 @@ package stepdefinitions;
 import org.testng.Assert;
 
 import qa.factory.DriverFactory;
-import pageObjects.TeamsPage;
+import pageObjects
+.TeamsPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
